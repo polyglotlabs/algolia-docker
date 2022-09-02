@@ -1,0 +1,10 @@
+* Conainerized Algolia CLI
+
+This is a dockerized version of [[https://github.com/algolia/cli][algolia-cli]]. The included script ~bin/algolia~ should be usable with exactly the same arguments and parameters as the official algolia binary.
+
+** Usage
+By default this script mounts ~\~/.algolia-pgl~ into the containers working directory.  The intent is to allow account configts to live in this directory and be handled (created and updated) directly by the container.  This has not been tested or used, and will probably be changed after doing so.  It's only an idea, for now.
+
+** Examples
+
+~bin/algolia -h~ For help text.

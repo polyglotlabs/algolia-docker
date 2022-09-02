@@ -10,9 +10,6 @@ ADD https://github.com/algolia/cli/archive/refs/tags/v${PKG_VERSION}.tar.gz     
 WORKDIR /build/algolia
 RUN tar -zxvf v${PKG_VERSION}.tar.gz && cd cli-${PKG_VERSION} && make install
 
-# cleanup
-# RUN apk del build-deps && rm -R /build /root/go /root/.cache
-
 ##############################
 FROM alpine:3.16 AS release
 COPY --from=builder /usr/local/bin/algolia /usr/local/bin/algolia
@@ -21,4 +18,5 @@ WORKDIR /app
 
 # mount here for I/O
 VOLUME /app
+
 ENTRYPOINT ["algolia"]
