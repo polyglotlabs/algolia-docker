@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+mkdir -p ~/.algolia-pgl
+docker run --rm -ti -v ~/.algolia-pgl:/app eyesore/algolia
